@@ -1,11 +1,15 @@
 .home {
   height: 200px;
-  //line-height: 200px;
+  // line-height: 200px;
   color: red;
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .finsh{
   text-decoration: underline;
   color: #0277bd;
+}
+li{
+  cursor: pointer;
+  width: 0px;
 }
