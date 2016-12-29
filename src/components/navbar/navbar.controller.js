@@ -1,5 +1,6 @@
 export default class NavbarController {
   constructor() {
-    this.name = 'navbar'
+    this.name = 'aple'
+    this.name1 = 'banber'
   }
 }
