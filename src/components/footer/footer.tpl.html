@@ -1,7 +1,8 @@
 <footer class="footer">
   <h1>from {{$ctrl.name}}</h1>
   <h1>{{$ctrl.word}}</h1>
+  <input ng-model="$ctrl.add" ng-keyup="$ctrl.newAdd($event)">
   <ul>
-    <li>this is change</li>
+    <li ng-repeat="x in $ctrl.item" ng-class="{color: x.isfinshed}" ng-click="$ctrl.change(x)">{{x.bel}}</li>
   </ul>
 </footer>
