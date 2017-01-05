@@ -1,8 +1,9 @@
 export default class HomeController {
-  constructor($http, userService, homeService) {
+  constructor($http, userService, homeService, localStorage) {
     this.$http = $http
     this.user = userService
     this.home = homeService
+    this.localStorage = localStorage
     this.items =
       []
     this.item = ''
@@ -20,6 +21,13 @@ export default class HomeController {
     this.name = this.user.getName()
   }
 
+  setdata() {
+    this.Sdata = this.localStorage.save()
+  }
+
+  getdata() {
+    this.gdata = this.localStorage.fetch()
+  }
   enter(e) {
     // var keycode = window.event ? e.keyCode : e.which
     if (e.keyCode === 13) {
@@ -37,7 +45,6 @@ export default class HomeController {
     // this.isfinsh
     // console.log(tem.isfinsh)
   }
-
   // addNew(e) {
   //  var keycode = window.event ? e.keyCode : e.which
   //  if (keycode === 13) {
@@ -45,4 +52,4 @@ export default class HomeController {
   //  }
   // }
 }
-HomeController.$inject = ['$http', 'user', 'home']
+HomeController.$inject = ['$http', 'user', 'home', 'localStorage']
