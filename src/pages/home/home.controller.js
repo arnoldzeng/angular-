@@ -24,9 +24,9 @@ export default class HomeController {
     // var keycode = window.event ? e.keyCode : e.which
     if (e.keyCode === 13) {
       // console.log(this.newItem)
-      console.log(this.items.push({
+      this.items.push({
         lber: this.newItem, isfinsh: false
-      }))
+      })
       this.newItem = ''
     }
   }

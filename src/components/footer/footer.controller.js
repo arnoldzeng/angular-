@@ -5,7 +5,7 @@ export default class footerController {
   }
 
   change(x) {
-    console.log(x.isfinshed)
+    // console.log(x.isfinshed)
     x.isfinshed = !x.isfinshed
   }
 
@@ -25,11 +25,11 @@ export default class footerController {
     var i = arr.length
     while (i--) {
       if (arr[i].bel === obj) {
-        console.log(111)
+        // console.log(111)
         return true
       }
       else {
-        console.log(arr[i], obj)
+        // console.log(arr[i], obj)
       }
     }
     return false
