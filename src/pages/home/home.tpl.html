@@ -2,6 +2,9 @@
   <h1 ng-click="$ctrl.randomName()">Click to change name: {{$ctrl.name}}</h1>
   <input ng-model="$ctrl.newItem" ng-keypress="$ctrl.enter($event)" type="text">
   <ul>
-    <li ng-click="$ctrl.change(tem)" ng-repeat="tem in $ctrl.items " ng-class="{finsh: tem.isfinsh}">{{tem.lber}}</li>
+    <li ng-click="$ctrl.change(tem)" ng-repeat="tem in $ctrl.items track by $index" ng-class="{finsh: tem.isfinsh}">
+      {{tem.lber}}
+    </li>
   </ul>
+  <button >清空</button>
 </main>

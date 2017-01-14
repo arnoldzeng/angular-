@@ -1,50 +1,71 @@
 export default class HomeController {
-  constructor($http, userService, homeService, localStorage) {
+  constructor($http, $rootScope, $scope, userService, homeService, localStorage) {
     this.$http = $http
+    this.$rootScope = $rootScope
+    this.$scope = $scope
     this.user = userService
     this.home = homeService
     this.localStorage = localStorage
-    this.items =
-      []
     this.item = ''
+    this.items = []
+    // this.items = this.getdata()
   }
 
   $onInit() {
-    // this.act()
+    // this.act().
+    // this.Test()
+    // console.log(this.Test())
+    // console.log(this.getdata('df'))
     this.randomName()
     this.home.getTestData().then(function(resp) {
       console.log(resp.data)
     })
+    this.getList()
+    // console.log(this.getdata('todotype'))
+    // this.items = this.getdata()
+    // console.log(this.getdata('11'))
+    // this.$scope.$watch(this.items, () => {
+    //  this.setdata('key', 'val')
+    // })
   }
 
   randomName() {
     this.name = this.user.getName()
   }
 
-  setdata() {
-    this.Sdata = this.localStorage.save()
+  Test() {
+    this.t = this.localStorage.test()
+    return this.t
   }
 
-  getdata() {
-    this.gdata = this.localStorage.fetch()
+  getList() {
+    this.items = this.localStorage.fetch('todo')
   }
+
+  setList() {
+    this.localStorage.save('todo', this.items)
+  }
+
   enter(e) {
     // var keycode = window.event ? e.keyCode : e.which
     if (e.keyCode === 13) {
-      // console.log(this.newItem)
+      console.log(this.newItem)
       this.items.push({
         lber: this.newItem, isfinsh: false
       })
       this.newItem = ''
+      this.setList()
     }
   }
 
   change(tem) {
     // tem.isfinsh
     tem.isfinsh = !tem.isfinsh
+    this.setList()
     // this.isfinsh
     // console.log(tem.isfinsh)
   }
+
   // addNew(e) {
   //  var keycode = window.event ? e.keyCode : e.which
   //  if (keycode === 13) {
@@ -52,4 +73,4 @@ export default class HomeController {
   //  }
   // }
 }
-HomeController.$inject = ['$http', 'user', 'home', 'localStorage']
+HomeController.$inject = ['$http', '$rootScope', '$scope', 'user', 'home', 'localStorage']

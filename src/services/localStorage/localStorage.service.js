@@ -1,14 +1,26 @@
 /**
  * Created by Administrator on 2017/1/4.
  */
-export default class localStorage {
-  fetch() {
-    return JSON.parse(window.localStorage.KEY || '[]')
+export default class localStorageService {
+  test() {
+    return 'ok'
   }
 
-  save(items) {
-    window.localStorage.KEY = JSON.stringify(items)
+  fetch(key) {
+    return JSON.parse(localStorage.getItem(key) || '[]')
   }
+
+  // fetch(key) {
+  //  return JSON.parse(window.localStorage.getItem(key) || '[]')
+  // }
+
+  save(key, val) {
+    localStorage.setItem(key, JSON.stringify(val))
+  }
+
+  // save(items) {
+  //  window.localStorage.setItem(key, JSON.stringify(items))
+  // }
   // get(key, defaulValue) {
   //  var stored = localStorage.getItem(key)
   //  try {
