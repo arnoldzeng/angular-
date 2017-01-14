@@ -58,6 +58,10 @@ export default class HomeController {
     }
   }
 
+  Clear() {
+    this.items = this.localStorage.claer('todo')
+  }
+
   change(tem) {
     // tem.isfinsh
     tem.isfinsh = !tem.isfinsh
