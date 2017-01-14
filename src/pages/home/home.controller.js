@@ -58,7 +58,12 @@ export default class HomeController {
     }
   }
 
+  clearItem() {
+    console.log(this.localStorage.claerItem('todo', this.items.length - 1))
+  }
+
   Clear() {
+    // this.items = this.localStorage.clear(this.items)
     this.items = this.localStorage.claer('todo')
   }
 

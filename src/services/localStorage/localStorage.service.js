@@ -13,6 +13,10 @@ export default class localStorageService {
   // fetch(key) {
   //  return JSON.parse(window.localStorage.getItem(key) || '[]')
   // }
+  claerItem(key, val) {
+    localStorage.removeItem(key, val)
+  }
+
   claer(key) {
     localStorage.removeItem(key)
   }
