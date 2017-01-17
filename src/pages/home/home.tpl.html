@@ -3,7 +3,10 @@
   <input ng-model="$ctrl.newItem" ng-keypress="$ctrl.enter($event)" type="text">
   <ul>
     <li ng-click="$ctrl.change(tem)" ng-repeat="tem in $ctrl.items track by $index" ng-class="{finsh: tem.isfinsh}">
-      {{tem.lber}}
+      <div class="item--style">
+        <laber>{{tem.lber}}</laber>
+        <div class="item--style__button" ng-click="$ctrl.del($index, $event)">删除</div>
+      </div>
     </li>
   </ul>
   <button ng-click="$ctrl.Clear()">清空</button>

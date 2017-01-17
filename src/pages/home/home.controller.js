@@ -8,6 +8,7 @@ export default class HomeController {
     this.localStorage = localStorage
     this.item = ''
     this.items = []
+    this.newItems = []
     // this.items = this.getdata()
   }
 
@@ -33,6 +34,17 @@ export default class HomeController {
     this.name = this.user.getName()
   }
 
+  del(index, e) {
+    e.stopPropagation()
+    // let item = this.items[index]
+    // this.localStorage.claerItem(tem)
+    console.log(this.items[0])
+    this.items.splice(index, 1)
+    this.newItems = this.items
+    console.log(this.newItems)
+    this.newSetLsit()
+  }
+
   Test() {
     this.t = this.localStorage.test()
     return this.t
@@ -40,6 +52,10 @@ export default class HomeController {
 
   getList() {
     this.items = this.localStorage.fetch('todo')
+  }
+
+  newSetLsit() {
+    this.localStorage.save('todo', this.newItems)
   }
 
   setList() {
@@ -59,8 +75,9 @@ export default class HomeController {
   }
 
   clearItem() {
-    console.log(this.items)
-    console.log(this.localStorage.claerItem('todo', this.items.length))
+    console.log(this.items.length)
+    console.log(this.localStorage.claerItem(this.items))
+    console.log(this.items.length)
   }
 
   Clear() {
