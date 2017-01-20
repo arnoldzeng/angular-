@@ -1,15 +1,17 @@
 <main class="home">
-  <h1 ng-click="$ctrl.randomName()">Click to change name: {{$ctrl.name}}</h1>
-  <input ng-model="$ctrl.newItem" ng-keypress="$ctrl.enter($event)" type="text">
-  <ul>
-    <li ng-click="$ctrl.change(tem, $event)" ng-repeat="tem in $ctrl.items track by $index" ng-class="{finsh: tem.isfinsh}">
-      <div class="item--style">
-        <input type="checkbox" ng-click="$ctrl.stopBubble($event)">
-        <laber>{{tem.lber}}</laber>
-        <div class="item--style__button" ng-click="$ctrl.del($index, $event)" class>删除</div>
-      </div>
-    </li>
-  </ul>
-  <button ng-click="$ctrl.Clear()" class="btn--emp">清空</button>
-  <button ng-click="$ctrl.clearItem()">撤销</button>
+    <h1 ng-click="$ctrl.randomName()">Click to change name: {{$ctrl.name}}</h1>
+    <input ng-model="$ctrl.newItem" ng-keypress="$ctrl.enter($event)" type="text">
+    <ul>
+        <li ng-click="$ctrl.change(tem, $event)" ng-repeat="tem in $ctrl.items track by $index"
+            ng-class="{finsh: tem.isfinsh}">
+            <div class="item--style">
+                <input type="checkbox" ng-click="$ctrl.stopBubble($event)">
+                <laber>{{tem.lber}}</laber>
+                <div class="item--style__button" ng-click="$ctrl.del($index, $event)" class>删除</div>
+            </div>
+        </li>
+    </ul>
+    <button ng-click="$ctrl.Clear()" class="btn--emp">清空</button>
+    <button ng-click="$ctrl.clearItem()">撤销</button>
+    <div>this is test</div>
 </main>
