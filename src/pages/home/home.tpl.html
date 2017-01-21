@@ -13,6 +13,16 @@
     </ul>
     <button ng-click="$ctrl.Clear()" class="btn--emp">清空</button>
     <button ng-click="$ctrl.clearItem()">撤销</button>
+  <hr>
     <h1>我的任务列表</h1>
-    <div>test4</div>
+  <input type="text" placeholder="添加新任务" width="50%" class="inpt"><br>
+  <input type="checkbox"><span class="spn">标记所有为以解决</span>
+  <div class="button--box">
+    <div class="condition clearfix">
+      <div class="button--box--condition clearfix"></div>
+      <div class="button--box__content"></div>
+      <div class="button--box__time"></div>
+    </div>
+    <div class="button--box--reseult clearfix"></div>
+  </div>
 </main>
