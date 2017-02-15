@@ -4,6 +4,7 @@
   color: #7e8c8d;
   // cursor: pointer;
   background: tan;
+  text-align: center;
 }
 
 .finsh {
@@ -38,7 +39,8 @@ li {
 
 .inpt {
   margin: 10px 0;
-  border: 1px solid violet
+  //border: 1px solid violet
+  border-radius: 5px;
 }
 
 .spn {
@@ -48,18 +50,58 @@ li {
 
 .button--box--condition {
   float: left;
-  border: 1px solid #3399cc;
+  border: 1px solid white;
   height: 20px;
-  width: 80px;
+  width: 85px;
   border-radius: 5px;
   margin-right: 5px;
   background: white;
+  .button--box__cont {
+    border: none;
+    background: white;
+    height: 21px;
+  }
+  .button--box__time {
+    border: none;
+    background: white;
+    border-left: 1px solid gray;
+    height: 21px;
+  }
 }
 
 .button--box--reseult {
   height: 20px;
-  width: 130px;
+  width: 160px;
   float: left;
-  border: 1px solid #263238;
+  border: 1px solid white;
   border-radius: 5px;
+  background: white;
+  .button--box__no {
+    border: none;
+    background: white;
+    height: 21px;
+  }
+  .button--box__yes {
+    border: none;
+    background: white;
+    border-left: 1px solid gray;
+    height: 21px;
+  }
+  .button--box__all {
+    border: none;
+    background: white;
+    border-left: 1px solid gray;
+    height: 21px;
+  }
+}
+.chekbox {
+  display:block;
+  min-height:20px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding-left:20px;
+  vertical-align:middle;
+}
+.list {
+  text-align: -webkit-center;
 }

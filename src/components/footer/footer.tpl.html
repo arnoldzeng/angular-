@@ -1,8 +1,36 @@
 <footer class="footer">
-  <h1>from {{$ctrl.name}}</h1>
-  <h1>{{$ctrl.word}}</h1>
-  <input ng-model="$ctrl.add" ng-keyup="$ctrl.newAdd($event)">
-  <ul>
-    <li ng-repeat="x in $ctrl.item" ng-class="{color: x.isfinshed}" ng-click="$ctrl.change(x)">{{x.bel}}</li>
+  <h1>我的任务计划表</h1>
+  <input ng-model="$ctrl.add" ng-keyup="$ctrl.newAdd($event)" class="inpt" placeholder="添加新的任务">
+  <div class="checkbox">
+    <label class="lber">
+      <input type="checkbox" ng-click="$ctrl.alldone()" ng-model="$ctrl.isAllDone">标记所有为已解决
+    </label>
+  </div>
+  <div class="button--box">
+    <div class="button--box__mode clearfix">
+      <button class="btn" ng-click="$ctrl.predicate='text';reverse=!reverse">内容</button>
+      <button class="btn2" ng-click="$ctrl.predicate='time';reverse=!reverse">时间</button>
+    </div>
+    <div class="button--box__Result clearfix">
+      <button class="btn" ng-click="query.isfinshed=false">未完成</button>
+      <button class="btn2" ng-click="query.isfinshed=true">已完成</button>
+      <button class="btn2" ng-click="query.isfinshed=''">全部</button>
+    </div>
+  </div>
+  <ul class="list">
+    <!--<li ng-repeat="x in $ctrl.item" ng-class="{color: x.isfinshed}" ng-click="$ctrl.change(x)">{{x.bel}}</li>-->
+    <li ng-repeat="x in $ctrl.item | filter:query | orderBy:predicate:reverse" class="li">
+      <div class="list--checkbox">
+        <label class="list--checkbox__lber">
+          <input type="checkbox" ng-model="x.isfinshed" ng-click="$ctrl.setList()"><span class="color-{{x.isfinshed}}">{{x.bel}}</span>
+        </label>
+        <button class="list--checkbox__cls" ng-click="$ctrl.del(x, $event)">删除</button>
+      </div>
+    </li>
   </ul>
+  <div class="count">
+    未完成的：<span class="bage">{{$ctrl.uncomplete()}}</span>
+    已完成的：<span class="bage">{{$ctrl.complete()}}</span>
+    全部: <span class="bage">{{$ctrl.item.length}}</span>
+  </div>
 </footer>
